@@ -55,6 +55,95 @@ They are used to evaluate the order in which these functions are executed in Nod
 - What is an event loop in Nodejs? 
 <pre>The working of an event loop begins with the occurrence of a callback wherever an event begins. This is usually run by a specific listener. Nodejs will keep executing the code after the functions have been called, without expecting the output prior to the beginning.</pre>
 
+- Explain REPL in the context of Nodejs 
+<pre>
+- Read: reads the user's input, parses it into Javascript data-structure and then stores it in the memory.
+- Eval: Receives and evaluates the data structure.
+- Print: Prints the final result
+- Loop: loops the provided command until CTRL+C is pressed twice 
+</pre>
+
+- What do you understand by a test pyramid? 
+<pre> Unit tests -> Integration tests -> End to end </pre>
+
+- Explain the purpose of module.exports? 
+<pre>A module in Nodejs is used to encapsulate all the related codes into a single unit of code which can be interpreted by shifting all related functions into a single file</pre>
+
+
+- What do you understand by Reactor Pattern in Nodejs? 
+<pre> Reactor Pattern in Nodejs is basically a concept of non-blocking I/O operations, this pattern povides a handler that is associated with each I/O operation, As soon as an I/O request is generated, it is then submitted to a demultiplexer, this demultiplexer is a notification interface which is capable of handling concurrency in non-blocking I/O mode, it also helps in collecting each and every request in the form of an event and then place each event in a queue, the resulting in the generation of the Event Queue</pre>
+
+
+- Explain the concept of middleware in Nodejs? 
+<pre>Middleware is a function receives the request and response objects
+- Commonly performed tasks
+- Execute any type of code
+- Update or modify the request and the response objects
+- Finish the request-response cycle 
+- Invoke the next middleware in the stack 
+</pre>
+
+
+- Differentiate between spawn() and fork() methods in Nodejs? 
+<pre>
+- The spawn() is used to launch a new process with the provided set of commands.
+- Fork() it is a special instance of spawn() that executes a new instance of the V8 engine.
+</pre>
+
+
+- Explain the concept of stub in Nodejs 
+<pre>Stubs are basically the programs or functions that are used for stimulating the module or component behavior, during any test cases, stubs provide the canned answers of the functions</pre>
+
+
+- How assert works in Nodejs? 
+<pre>Assert is used to write tests, it only provides feedback only when any of the running test cases fails, this module gives you a set of assertion tests which are then used for testing invariants, it is basically used internally by Nodejs but using require('assert') code, it can be used in other applications as well </pre>
+
+
+- Differentiate between process.nextTick() and setImmediate()? 
+<pre>process.nextTick() and setImmediate(), both are functions of the Timers module which help in executing the code after a predefined period 
+
+- process.nextTick():
+it waits for the execution of action till the next pass around in the event loop or once the event loop is completed only then it will invoke the callback function
+
+- setImmediate()
+It waits for the execution of action till the next pass around in the event loop or once the event loop is completed only then it will invoke the callback function</pre>
+
+
+- Explain the usage of a buffer class in Nodejs ? 
+<pre>Buffer class in Nodejs is used for storing the raw data in a similar manner of an array of integers, but it corresponds to a raw memory allocation that is located outside the V8 heap, it is global class that is easily accessible can be accessed in an application without importing a buffer module.
+
+Buffer class is used because pure Javascript is not compatible with binary date</pre>
+
+
+- How does Nodejs handle the child threads ? 
+<pre>Nodejs is a single threaded process and doesn't expose the child threads or thread management methods</pre>
+
+
+- What is the use of NODE_ENV? 
+<pre>If the project is in the production stage, Nodejs promotes the convention of making use of NODE_ENV variable to flag it</pre>
+
+
+- Differentiate between Nodejs vs Ajax? 
+<pre>
+- Nodejs is a server-side technology
+- Required to develop the server software that are typically executed by the servers instead of the web browsers
+
+- Ajax is client-side technology
+- Required for updating or modifying the webpage contents wihout having to refresh it </pre>
+
+- What do you understand by an Event Emitter in Nodejs ? 
+<pre>
+    const EventEmitter = require('events');
+    class MyEmitter extends EventEmitter{ }
+    const myEmitter = new MyEmitter();
+
+    myEmitter.on('event', () => {
+        console.log('an event ocurred!');
+
+    });
+
+    myEmitter.emit('event');
+</pre>
 
 
 
