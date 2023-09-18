@@ -144,6 +144,16 @@ Buffer class is used because pure Javascript is not compatible with binary date<
 
     myEmitter.emit('event');
 </pre>
+- What is the call stack, callback queue and how they interact within the event loop?
+  <pre>
+    Call stack: In Node.js, the call stack is used to keep track of the execution of synchronous functions. When a function is called synchronously, it is added to the top of the call stack, and when it returns, it is       removed from the stack. This means that if a function is blocking or takes a long time to complete, it will block the execution of other functions until it returns.
+
+    Callback Queue: In Node.js, when an asynchronous operation completes, the callback function is not executed immediately. Instead, it is placed in a queue called the callback queue. The callback queue holds all the       completed callback functions that are waiting to be executed. By using callbacks and the callback queue, you can avoid blocking the event loop and ensure that your code can handle multiple requests simultaneously.
+
+    Event loop: The event loop is a fundamental concept in Node.js that allows for asynchronous programming. It is a continuously running process that monitors the call stack and the callback queue, and executes tasks       when the call stack is empty.
+
+    The event loop works in a cycle, repeatedly checking the call stack and the callback queue. When the call stack is empty, the event loop looks for the next task in the callback queue to execute. When a task is           picked up from the queue, it is added to the call stack and executed
+  </pre>
 
 
 
